@@ -1,0 +1,48 @@
+<section id="contact" class="contact">
+    <p class="subtitle">GET IN TOUCH</p>
+    <h1>Let's Connect.</h1>
+    <p>Have questions about NOVA? We'd love to hear from you.</p>
+
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message →</button>
+    </form>
+</section>
+
+<style>
+    .contact {
+        padding: 90px 8%;
+        background: #0b0b0b;
+        color: white;
+    }
+
+    .subtitle { color: #ff3b30; letter-spacing: 3px; }
+
+    form {
+        display: grid;
+        gap: 15px;
+        max-width: 550px;
+        margin: 35px auto 0;
+    }
+
+    input, textarea {
+        padding: 15px;
+        border: 1px solid #444;
+        background: #191919;
+        color: white;
+        border-radius: 5px;
+        font: inherit;
+    }
+
+    textarea { min-height: 140px; resize: vertical; }
+
+    button {
+        padding: 15px;
+        background: #ff3b30;
+        color: white;
+        border: 0;
+        cursor: pointer;
+    }
+</style>

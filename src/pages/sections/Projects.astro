@@ -1,0 +1,70 @@
+---
+import Card from "../../components/Card.astro";
+
+import shoe1 from "../../assets/images/nova-runner.png";
+import shoe2 from "../../assets/images/nova-street.jpg";
+import shoe3 from "../../assets/images/nova-classic.jpg";
+---
+
+<section id="projects" class="projects">
+    <p class="subtitle">OUR COLLECTION</p>
+    <h1>Explore NOVA</h1>
+    <p class="intro">
+        Discover footwear designed for comfort, confidence,
+        and everyday style.
+    </p>
+
+    <div class="project-grid">
+        <Card
+            title="NOVA Runner"
+            description="Lightweight shoes designed for everyday movement."
+            image={shoe1}
+        />
+
+        <Card
+            title="NOVA Street"
+            description="Modern streetwear footwear with a bold identity."
+            image={shoe2}
+        />
+
+        <Card
+            title="NOVA Classic"
+            description="Timeless footwear with comfort and simplicity."
+            image={shoe3}
+        />
+    </div>
+</section>
+
+<style>
+    .projects {
+        padding: 90px 8%;
+        background: #0b0b0b;
+        color: white;
+    }
+
+    .subtitle {
+        color: #ff3b30;
+        letter-spacing: 4px;
+    }
+
+    .projects h1 {
+        font-size: 42px;
+    }
+
+    .intro {
+        color: #aaa;
+        margin: 15px 0 40px;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    @media(max-width: 750px) {
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

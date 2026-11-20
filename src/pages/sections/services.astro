@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/images/nova-logo.svg";
+---
+
+<section id="services" class="services">
+    <p class="subtitle">WHAT WE OFFER</p>
+    <h1>Our Brand & Services</h1>
+
+    <div class="service-grid">
+        <div class="service-card">
+            <Image src={logo} alt="NOVA brand logo" />
+            <h2>NOVA Identity</h2>
+            <p>A modern footwear brand built around creativity and ambition.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="symbol">✦</div>
+            <h2>Premium Footwear</h2>
+            <p>Footwear designed to combine comfort, quality, and style.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="symbol">↗</div>
+            <h2>Modern Design</h2>
+            <p>Contemporary designs for people who want to stand out.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services {
+        padding: 90px 8%;
+        background: #111;
+        color: white;
+    }
+
+    .subtitle {
+        color: #e63930;
+        letter-spacing: 3px;
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .service-card {
+        padding: 30px;
+        background: #191919;
+        border-radius: 12px;
+        border: 1px solid #333;
+    }
+
+    .service-card img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+    }
+
+    .symbol {
+        font-size: 65px;
+        color: #e63930;
+    }
+
+    .service-card p {
+        color: #aaa;
+        line-height: 1.7;
+    }
+
+    @media(max-width: 750px) {
+        .service-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import shoe from "../../assets/images/nova-runner.png";
+---
+
+<section id="home" class="hero">
+    <div class="hero-content reveal">
+        <p class="tagline">DREAM BIGGER. MOVE FURTHER.</p>
+        <h1>STEP INTO<br /><span>YOUR FUTURE.</span></h1>
+        <p>
+            Discover the next generation of footwear.
+            Designed for comfort, built for confidence.
+        </p>
+        <a href="#projects" class="hero-button">Explore Collection →</a>
+    </div>
+
+    <div class="hero-image reveal">
+        <Image src={shoe} alt="NOVA footwear collection" />
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 600px;
+        padding: 80px 8%;
+        background: #0b0b0b;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .tagline {
+        color: #ff3b30;
+        letter-spacing: 4px;
+    }
+
+    h1 {
+        font-size: clamp(40px, 6vw, 75px);
+        line-height: 1.05;
+        font-weight: 900;
+    }
+
+    h1 span {
+        color: #ff3b30;
+    }
+
+    .hero-content > p:not(.tagline) {
+        color: #aaa;
+        line-height: 1.8;
+        max-width: 450px;
+    }
+
+    .hero-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 25px;
+        background: #ff3b30;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    @media(max-width: 750px) {
+        .hero {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

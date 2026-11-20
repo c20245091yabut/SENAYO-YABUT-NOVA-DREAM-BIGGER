@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/nova-logo.svg";
+---
+
+<header class="navbar">
+    <a href="#home" class="brand">
+        <Image src={logo} alt="NOVA Shoes Logo" class="logo" />
+        <span class="brand-name">NOVA<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<style>
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 6%;
+        background: #080808;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+    }
+
+    nav {
+        display: flex;
+        gap: 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color .3s;
+    }
+
+    nav a:hover {
+        color: #ff3b30;
+    }
+
+    @media (max-width: 700px) {
+        .navbar {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav {
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    }
+</style>
