@@ -1,22 +1,32 @@
 ---
----
-
-<footer class="border-t border-white/10 bg-black px-6 py-8 text-white">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
-
-        <a href="#home" class="flex items-center gap-3">
-            <span class="brand-name">
-                NOVA<span class="brand-dot">.</span>
-            </span>
-        </a>
-
-        <p class="text-sm text-gray-500">
-            © 2026 NOVA Shoes. All rights reserved.
-        </p>
-
-        <a href="#home" class="text-sm text-orange-400 hover:text-white">
-            Back to top ↑
-        </a>
-
-    </div>
+<footer class="site-footer">
+    <a href="#home" class="brand-name">NOVA<span class="brand-dot">.</span></a>
+    <p>Created in partnership by yabut_ and Senayo.</p>
+    <a href="#home" class="back-top">Back to top <span>↑</span></a>
 </footer>
+
+<style>
+    .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 26px max(6%, calc((100vw - 1200px) / 2));
+        border-top: 1px solid rgb(255 255 255 / 8%);
+        background: #080808;
+    }
+
+    .site-footer p,
+    .back-top {
+        margin: 0;
+        color: #85858d;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    .back-top span { color: #ff3b30; }
+
+    @media (max-width: 620px) {
+        .site-footer { align-items:flex-start; flex-direction: column; }
+    }
+</style>

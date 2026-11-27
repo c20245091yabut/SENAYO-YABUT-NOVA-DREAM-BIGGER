@@ -1,18 +1,21 @@
 ---
-import BaseLayout from "../layouts/Baselayout.astro";
+import BaseLayout from "../Layouts/Baselayout.astro";
+
 import Hero from "./sections/Hero.astro";
-import Services from "./sections/services.astro";
-import Process from "./sections/Process.astro";
 import About from "./sections/About.astro";
+import Talents from "./sections/Team.astro";
+import Progress from "./sections/Process.astro";
+import Services from "./sections/services.astro";
 import Projects from "./sections/Projects.astro";
 import Contact from "./sections/Contact.astro";
 ---
 
-<BaseLayout title="NOVA Shoes | Dream Bigger">
+<BaseLayout title="NOVA | Dream Bigger. Create Beyond.">
     <Hero />
-    <Services />
-    <Process />
     <About />
+    <Talents />
+    <Progress />
+    <Services />
     <Projects />
     <Contact />
 </BaseLayout>

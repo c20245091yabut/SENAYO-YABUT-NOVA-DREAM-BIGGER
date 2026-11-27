@@ -1,0 +1,118 @@
+---
+const talents = [
+    {
+        number: "01",
+        title: "Creative Design",
+        description: "Building clear visual identities and thoughtful experiences that make ideas feel distinct."
+    },
+    {
+        number: "02",
+        title: "Programming",
+        description: "Turning concepts into responsive, useful digital experiences with clean, considered code."
+    }
+];
+---
+
+<section id="talents" class="talents section-wrap">
+    <header class="section-heading reveal">
+        <p class="section-kicker">WHAT WE BRING</p>
+        <h2 class="section-title">Our <span class="accent-text">talents.</span></h2>
+        <p class="section-description">A balance of imagination and implementation, working as one.</p>
+    </header>
+    <div class="talent-grid">
+        {talents.map((talent) => (
+            <article class="talent-card reveal">
+                <span class="talent-number">{talent.number}</span>
+                <span class="talent-icon" aria-hidden="true">{talent.number === "01" ? "✳" : "</>"}</span>
+                <h3>{talent.title}</h3>
+                <p>{talent.description}</p>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+            </article>
+        ))}
+    </div>
+</section>
+
+<style>
+    .talents {
+        padding-block: 20px clamp(90px, 12vw, 145px);
+    }
+
+    .section-heading {
+        max-width: 650px;
+        margin-bottom: 38px;
+    }
+
+    .section-heading .section-description {
+        margin: 14px 0 0;
+    }
+
+    .talent-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .talent-card {
+        position: relative;
+        min-height: 260px;
+        padding: clamp(24px, 4vw, 38px);
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        background: linear-gradient(145deg, #151517, #0e0e10);
+        transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .talent-card:hover {
+        transform: translateY(-5px);
+        border-color: rgb(255 59 48 / 55%);
+        background: linear-gradient(145deg, #1a1515, #101010);
+    }
+
+    .talent-number {
+        color: #77777e;
+        font-size: 10px;
+        letter-spacing: .12em;
+    }
+
+    .talent-icon {
+        display: block;
+        margin-top: 25px;
+        color: var(--color-accent);
+        font-size: 32px;
+        font-weight: 750;
+    }
+
+    .talent-card h3 {
+        margin: 14px 0 8px;
+        font-size: 21px;
+        letter-spacing: -.03em;
+    }
+
+    .talent-card p {
+        max-width: 390px;
+        margin: 0;
+        color: var(--color-muted);
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .card-arrow {
+        position: absolute;
+        right: 28px;
+        bottom: 25px;
+        color: #73737a;
+        transition: color .2s, transform .2s;
+    }
+
+    .talent-card:hover .card-arrow {
+        transform: translate(2px, -2px);
+        color: var(--color-accent);
+    }
+
+    @media (max-width: 640px) {
+        .talent-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

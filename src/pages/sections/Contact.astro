@@ -1,48 +1,41 @@
 <section id="contact" class="contact">
-    <p class="subtitle">GET IN TOUCH</p>
-    <h1>Let's Connect.</h1>
-    <p>Have questions about NOVA? We'd love to hear from you.</p>
-
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message →</button>
-    </form>
+    <div class="contact-inner section-wrap">
+        <div class="contact-copy reveal">
+            <p class="section-kicker">START A CONVERSATION</p>
+            <h2 class="section-title">LET'S<br /><span class="accent-text">CONNECT.</span></h2>
+            <p class="section-description">Have an idea you'd like to explore together? Tell us a little about it.</p>
+        </div>
+        <form id="contact-form" class="reveal">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="What are you dreaming up?" required></textarea>
+            <button type="submit" class="send-button">Send Message <span>↗</span></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
 </section>
 
+<script>
+    const form = document.querySelector<HTMLFormElement>("#contact-form");
+    const status = form?.querySelector<HTMLElement>(".form-status");
+    form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (status) status.textContent = "Contact delivery isn't configured yet.";
+    });
+</script>
+
 <style>
-    .contact {
-        padding: 90px 8%;
-        background: #0b0b0b;
-        color: white;
-    }
-
-    .subtitle { color: #ff3b30; letter-spacing: 3px; }
-
-    form {
-        display: grid;
-        gap: 15px;
-        max-width: 550px;
-        margin: 35px auto 0;
-    }
-
-    input, textarea {
-        padding: 15px;
-        border: 1px solid #444;
-        background: #191919;
-        color: white;
-        border-radius: 5px;
-        font: inherit;
-    }
-
-    textarea { min-height: 140px; resize: vertical; }
-
-    button {
-        padding: 15px;
-        background: #ff3b30;
-        color: white;
-        border: 0;
-        cursor: pointer;
-    }
+    .contact { padding-block:clamp(85px,12vw,145px); }
+    .contact-inner { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(45px,9vw,125px); }
+    form { display:grid; gap:10px; padding:clamp(22px,4vw,38px); border:1px solid var(--border); border-radius:5px; background:#121214; }
+    label { margin-top:6px; color:#dddde1; font-size:11px; font-weight:600; }
+    input, textarea { width:100%; padding:13px 14px; border:1px solid #343438; border-radius:3px; background:#0d0d0f; color:#fff; }
+    input::placeholder, textarea::placeholder { color:#74747c; }
+    textarea { min-height:130px; resize:vertical; }
+    .send-button { justify-self:start; margin-top:8px; padding:15px 20px; border:1px solid var(--accent); border-radius:4px; background:var(--accent); color:#fff; font-weight:700; cursor:pointer; }
+    .form-status { min-height:16px; margin:2px 0 0; color:#b6b6bd; font-size:11px; }
+    @media(max-width:720px){.contact-inner{grid-template-columns:1fr}}
 </style>

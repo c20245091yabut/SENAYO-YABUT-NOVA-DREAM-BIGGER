@@ -1,36 +1,42 @@
 <section id="about" class="about">
-    <p class="subtitle">OUR STORY</p>
-    <h1>About NOVA</h1>
-
-    <p>
-        NOVA is a footwear brand inspired by new beginnings,
-        creativity, and innovation. Our mission is to bring
-        together modern design, everyday comfort, and personal
-        expression through shoes.
-    </p>
-
-    <h2>Dream Bigger. Walk Further.</h2>
+    <div class="about-mark reveal"><span>N.</span><small>A NEW PERSPECTIVE</small></div>
+    <div class="about-copy reveal">
+        <p class="section-kicker">WHO WE ARE</p>
+        <h2 class="section-title">Ideas deserve<br />room to <span class="accent-text">grow.</span></h2>
+        <p class="section-description">
+            NOVA is a creative partnership built to turn imagination into things people can see,
+            use, and remember. We bring design and technology together with curiosity and care.
+        </p>
+        <p class="section-description">
+            Created by <strong>yabut_</strong> and <strong>Senayo</strong>, NOVA is our shared
+            space to experiment, collaborate, and create beyond the expected.
+        </p>
+    </div>
 </section>
 
 <style>
     .about {
-        padding: 100px 15%;
-        text-align: center;
-        background: #0b0b0b;
-        color: white;
+        display:grid;
+        grid-template-columns:.9fr 1.1fr;
+        align-items:center;
+        gap:clamp(45px,9vw,130px);
+        width:min(100% - 12%,1050px);
+        margin-inline:auto;
+        padding-block:clamp(90px,12vw,150px);
     }
 
-    .subtitle {
-        color: #e63930;
-        letter-spacing: 3px;
+    .about-mark {
+        position:relative;
+        display:grid;
+        place-items:center;
+        min-height:330px;
+        border:1px solid var(--border);
+        border-radius:6px;
+        background:radial-gradient(circle at center,rgb(255 59 48 / 13%),transparent 50%),#111;
     }
-
-    .about p:not(.subtitle) {
-        max-width: 750px;
-        margin: 25px auto;
-        color: #aaa;
-        line-height: 2;
-    }
-
-    .about h2 { color: #e63930; }
+    .about-mark span { font-size:clamp(100px,18vw,190px); font-weight:850; letter-spacing:-.12em; }
+    .about-mark small { position:absolute; right:18px; bottom:16px; color:#888; font-size:9px; letter-spacing:.18em; }
+    .about-copy .section-title { margin-bottom:24px; }
+    .about-copy strong { color:#f4f4f5; }
+    @media(max-width:720px){.about{grid-template-columns:1fr;}.about-mark{min-height:240px}}
 </style>

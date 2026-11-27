@@ -1,78 +1,38 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../../assets/images/nova-logo.svg";
+const services = [
+    { number: "01", icon: "✳", title: "Creative Design", description: "Visual identities and digital experiences shaped around your idea and audience." },
+    { number: "02", icon: "↗", title: "Website Creation", description: "Responsive, polished websites that feel clear, memorable, and easy to use." },
+    { number: "03", icon: "{ }", title: "System Development", description: "Purposeful digital tools that turn complex needs into simple, reliable flows." }
+];
 ---
 
-<section id="services" class="services">
-    <p class="subtitle">WHAT WE OFFER</p>
-    <h1>Our Brand & Services</h1>
-
+<section id="services" class="services section-wrap">
+    <header class="services-heading reveal">
+        <p class="section-kicker">HOW WE CAN HELP</p>
+        <h2 class="section-title">Made to move<br /><span class="accent-text">ideas forward.</span></h2>
+    </header>
     <div class="service-grid">
-        <div class="service-card">
-            <Image src={logo} alt="NOVA brand logo" />
-            <h2>NOVA Identity</h2>
-            <p>A modern footwear brand built around creativity and ambition.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="symbol">✦</div>
-            <h2>Premium Footwear</h2>
-            <p>Footwear designed to combine comfort, quality, and style.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="symbol">↗</div>
-            <h2>Modern Design</h2>
-            <p>Contemporary designs for people who want to stand out.</p>
-        </div>
+        {services.map((service) => (
+            <article class="service-card reveal">
+                <span class="service-number">{service.number}</span>
+                <span class="symbol" aria-hidden="true">{service.icon}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+            </article>
+        ))}
     </div>
 </section>
 
 <style>
-    .services {
-        padding: 90px 8%;
-        background: #111;
-        color: white;
-    }
-
-    .subtitle {
-        color: #e63930;
-        letter-spacing: 3px;
-    }
-
-    .service-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin-top: 40px;
-    }
-
-    .service-card {
-        padding: 30px;
-        background: #191919;
-        border-radius: 12px;
-        border: 1px solid #333;
-    }
-
-    .service-card img {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;
-    }
-
-    .symbol {
-        font-size: 65px;
-        color: #e63930;
-    }
-
-    .service-card p {
-        color: #aaa;
-        line-height: 1.7;
-    }
-
-    @media(max-width: 750px) {
-        .service-grid {
-            grid-template-columns: 1fr;
-        }
-    }
+    .services { padding-block:clamp(85px,11vw,135px); }
+    .services-heading { margin-bottom:40px; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .service-card { min-height:250px; padding:25px; border:1px solid var(--border); border-radius:5px; background:#121214; transition:.25s ease; }
+    .service-card:hover { transform:translateY(-5px); border-color:rgb(255 59 48 / 55%); }
+    .service-number { color:#77777e; font-size:10px; letter-spacing:.1em; }
+    .symbol { display:block; margin:28px 0 18px; color:var(--accent); font-size:27px; font-weight:700; }
+    .service-card h3 { margin:0 0 10px; font-size:17px; }
+    .service-card p { margin:0; color:var(--muted); font-size:12px; line-height:1.7; }
+    @media(max-width:760px){.service-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){.service-grid{grid-template-columns:1fr}}
 </style>
